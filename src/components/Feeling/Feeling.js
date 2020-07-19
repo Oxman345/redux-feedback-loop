@@ -17,7 +17,7 @@ class Feeling extends Component {
       <div className="Feeling">
         <h1>How are you feeling today?</h1>
           <form>
-            <label for="feeling">feeling?</label>
+            <label for="feeling">feeling? </label>
             <input type="number" min="1" max="5" id="feeling" required onChange={(e) => this.setState({ feeling: e.currentTarget.value })} value={this.state.feeling}></input>
             <input type="submit" value="Next" onClick={this.handleNext}/>
           </form>

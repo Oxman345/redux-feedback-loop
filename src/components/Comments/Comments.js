@@ -8,7 +8,7 @@ class Comments extends Component {
   };
 
   handleNext = () => {
-    this.props.dispatch({ type: 'UPDATE_Comments', payload: this.state.Comments });
+    this.props.dispatch({ type: 'UPDATE_COMMENTS', payload: this.state.Comments });
     this.props.history.push('/Review');
   }
 
@@ -17,7 +17,7 @@ class Comments extends Component {
       <div className="Comments">
         <h1>Any comments you want to leave?</h1>
           <form>
-            <label for="Comments">Comments</label>
+            <label for="Comments">Comments </label>
             <input type="text" id="Comments" onChange={(e) => this.setState({ Comments: e.currentTarget.value })} value={this.state.Comments}></input>
             <input type="submit" value="Next" onClick={this.handleNext}/>
           </form>

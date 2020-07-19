@@ -8,9 +8,9 @@ import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 
 const state = {
-    feeling: '',
-    understanding: '',
-    support: '',
+    feeling: Number(''),
+    understanding: Number(''),
+    support: Number(''),
     comments: '',
   }
 
@@ -22,6 +22,8 @@ function reducer(state, action) {
             return { ...state, understanding: action.payload };
         case 'UPDATE_SUPPORT':
                 return { ...state, support: action.payload };
+        case 'UPDATE_COMMENTS':
+                return { ...state, comments: action.payload };
         default:
             return state;
     }

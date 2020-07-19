@@ -8,7 +8,7 @@ class Support extends Component {
   };
 
   handleNext = () => {
-    this.props.dispatch({ type: 'UPDATE_Support', payload: this.state.Support });
+    this.props.dispatch({ type: 'UPDATE_SUPPORT', payload: this.state.Support });
     this.props.history.push('/Comments');
   }
 
@@ -17,7 +17,7 @@ class Support extends Component {
       <div className="Support">
         <h1>How well are you being supported?</h1>
           <form>
-            <label for="Support">Support?</label>
+            <label for="Support">Support? </label>
             <input type="number" min="1" max="5" id="Support" required onChange={(e) => this.setState({ Support: e.currentTarget.value })} value={this.state.Support}></input>
             <input type="submit" value="Next" onClick={this.handleNext}/>
           </form>
