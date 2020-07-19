@@ -23,7 +23,7 @@ class Review extends Component {
   //     })//end axios
     
   //   alert('Submission Successful');
-  }
+  // }
   
   render() {
     return (
