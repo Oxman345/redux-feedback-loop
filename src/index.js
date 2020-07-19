@@ -18,6 +18,8 @@ function reducer(state, action) {
     switch(action.type) {
         case 'UPDATE_FEELING':
             return { ...state, feeling: action.payload };
+        case 'UPDATE_UNDERSTANDING':
+            return { ...state, understanding: action.payload };
         default:
             return state;
     }
