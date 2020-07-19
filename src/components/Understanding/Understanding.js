@@ -7,7 +7,8 @@ class Understanding extends Component {
     Understanding: 1
   };
 
-  handleNext = () => {
+  handleNext = (event) => {
+    event.preventDefault();
     this.props.dispatch({ type: 'UPDATE_UNDERSTANDING', payload: this.state.Understanding });
     this.props.history.push('/Support');
   }

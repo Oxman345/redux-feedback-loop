@@ -6,24 +6,26 @@ import axios from 'axios';
 class Review extends Component {
   
 
-  // handleSubmit = () => {
-  //   axios({
-  //     method: 'POST',
-  //     url: '/api/order',
-  //     data: customerPost
-  //     })
-  //     .then((response) => {
-  //         //Send user info to server
-  //         //Send order total to server
-  //         //Send array of pizzas to server
-  //         console.log('THIS IS FROM OUR POST:', response);
-  //     })
-  //     .catch((error) => {
-  //         console.log('Error adding customer', error);
-  //     })//end axios
+  handleSubmit = () => {
+    console.log(this.props.reduxState);
+    axios({
+      method: 'POST',
+      url: '/Review',
+      data: this.props.reduxState
+      })
+      .then((response) => {
+          //Send user feedback to server
+          console.log('THIS IS FROM OUR POST:', response);
+          alert('Submission Successful');
+          this.props.history.push('/')
+      })
+      .catch((error) => {
+          console.log('Error adding customer', error);
+          alert('Submission Failed, Try again later.');
+      })//end axios
     
-  //   alert('Submission Successful');
-  // }
+    
+  }
   
   render() {
     return (
@@ -31,7 +33,6 @@ class Review extends Component {
         <h1>Any Review you want to leave?</h1>
           <form>
             <h3>Feelings: {this.props.reduxState.feeling}</h3>
-            {console.log(this.props.reduxState.feeling)}
             <h3>Understanding: {this.props.reduxState.understanding}</h3>
             <h3>Support: {this.props.reduxState.support}</h3>
             <h3>Comments: {this.props.reduxState.comments}</h3>

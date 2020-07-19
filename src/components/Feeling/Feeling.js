@@ -7,7 +7,8 @@ class Feeling extends Component {
     feeling: 1
   };
 
-  handleNext = () => {
+  handleNext = (event) => {
+    event.preventDefault();
     this.props.dispatch({ type: 'UPDATE_FEELING', payload: this.state.feeling });
     this.props.history.push('/Understanding');
   }

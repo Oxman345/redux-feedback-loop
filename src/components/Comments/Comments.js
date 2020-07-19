@@ -7,7 +7,8 @@ class Comments extends Component {
     Comments: ''
   };
 
-  handleNext = () => {
+  handleNext = (event) => {
+    event.preventDefault();
     this.props.dispatch({ type: 'UPDATE_COMMENTS', payload: this.state.Comments });
     this.props.history.push('/Review');
   }

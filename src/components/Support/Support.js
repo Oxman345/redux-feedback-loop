@@ -7,7 +7,8 @@ class Support extends Component {
     Support: 1
   };
 
-  handleNext = () => {
+  handleNext = (event) => {
+    event.preventDefault();
     this.props.dispatch({ type: 'UPDATE_SUPPORT', payload: this.state.Support });
     this.props.history.push('/Comments');
   }
