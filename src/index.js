@@ -20,6 +20,8 @@ function reducer(state, action) {
             return { ...state, feeling: action.payload };
         case 'UPDATE_UNDERSTANDING':
             return { ...state, understanding: action.payload };
+        case 'UPDATE_SUPPORT':
+                return { ...state, support: action.payload };
         default:
             return state;
     }

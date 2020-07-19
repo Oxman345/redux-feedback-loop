@@ -15,7 +15,7 @@ class Understanding extends Component {
   render() {
     return (
       <div className="Understanding">
-        <h1>How are you Understanding today?</h1>
+        <h1>How well are you understanding the content?</h1>
           <form>
             <label for="Understanding">Understanding?</label>
             <input type="number" min="1" max="5" id="Understanding" required onChange={(e) => this.setState({ Understanding: e.currentTarget.value })} value={this.state.Understanding}></input>
