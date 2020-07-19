@@ -7,7 +7,8 @@ class Understanding extends Component {
     Understanding: 1
   };
 
-  handleNext = () => {
+  handleNext = (event) => {
+    event.preventDefault();
     this.props.dispatch({ type: 'UPDATE_UNDERSTANDING', payload: this.state.Understanding });
     this.props.history.push('/Support');
   }
@@ -17,7 +18,7 @@ class Understanding extends Component {
       <div className="Understanding">
         <h1>How well are you understanding the content?</h1>
           <form>
-            <label for="Understanding">Understanding?</label>
+            <label for="Understanding">Understanding? </label>
             <input type="number" min="1" max="5" id="Understanding" required onChange={(e) => this.setState({ Understanding: e.currentTarget.value })} value={this.state.Understanding}></input>
             <input type="submit" value="Next" onClick={this.handleNext}/>
           </form>
