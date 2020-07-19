@@ -7,10 +7,9 @@ class Review extends Component {
   
 
   handleSubmit = () => {
-    console.log(this.props.reduxState);
     axios({
       method: 'POST',
-      url: '/Review',
+      url: '/review',
       data: this.props.reduxState
       })
       .then((response) => {
@@ -20,7 +19,7 @@ class Review extends Component {
           this.props.history.push('/')
       })
       .catch((error) => {
-          console.log('Error adding customer', error);
+          console.log('Error saving feedback', error);
           alert('Submission Failed, Try again later.');
       })//end axios
     
